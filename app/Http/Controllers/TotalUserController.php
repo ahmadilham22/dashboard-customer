@@ -24,7 +24,7 @@ class TotalUserController extends Controller
 
         $categories = json_encode($categories);
         $values = json_encode($values);
-        
+
         return view('chart.usertotal', compact('totaluser','categories','values'));
     }
 }

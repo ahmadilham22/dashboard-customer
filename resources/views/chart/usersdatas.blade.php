@@ -37,11 +37,11 @@
 @endsection
 
 @section('js')
-    
+
 <script type="text/javascript">
     const categories = JSON.parse('{!! $categories !!}');
     const data = JSON.parse('{!! $values !!}');
-    
+
 
     Highcharts.chart('container', {
 

@@ -21,9 +21,7 @@ use App\Http\Controllers\DataUsersController;
 Auth::routes();
 
 
-Route::get('/users', [LogActivityController::class, 'index']);
-Route::get('/userstotal', [TotalUserController::class, 'index']);
-Route::get('/usersdatas', [DataUsersController::class, 'index']);
+
 
 Route::get('/usersrevenue', function () {
     return view('chart.userrevenue', [
@@ -33,6 +31,12 @@ Route::get('/usersrevenue', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>'auth'], function(){
+
+	Route::get('/users', [LogActivityController::class, 'index']);
+
+	Route::get('/userstotal', [TotalUserController::class, 'index']);
+
+	Route::get('/usersdatas', [DataUsersController::class, 'index']);
 	Route::get('/', 'HomeController@index')->name('index');
 	Route::get('/normalization/{data}', 'NormalizationController@index');
 	Route::group(['prefix'=>'asset', 'as'=>'asset.'], function(){

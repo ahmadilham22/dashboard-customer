@@ -28,26 +28,22 @@
             <div class="section-header">
                 <h1>Dashboard Customer</h1>
             </div>
-            
+
         <div class="section-body">
             <div id="container" style="padding-right: 20px"></div>
-        </div>            
+        </div>
         </section>
-        
+
     </div>
 @endsection
 
 @section('js')
-    
 <script type="text/javascript">
     const categories = JSON.parse('{!! $categories !!}');
     const data = JSON.parse('{!! $values !!}');
-    
-
     Highcharts.chart('container', {
-
         title: {
-            text: 'Pengguna Aktif Tujuh Hari Terakhir'
+            text: 'Pengguna Aktif'
         },
         yAxis: {
             title: {
@@ -87,8 +83,6 @@
             }
             }]
         }
-
     });
-
 </script>
 @endsection

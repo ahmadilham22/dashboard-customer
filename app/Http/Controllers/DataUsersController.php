@@ -16,31 +16,19 @@ class DataUsersController extends Controller
                                     FROM `log_activity`
                                     GROUP BY date_activity
                                     ORDER BY date_activity");
-        
-        
         $categories = [];
         $values = [];
-        
- 
         foreach ($totaluser as $val){
             $categories [] = date( 'd/m/Y', strtotime($val->date_activity),);
             $values [] = $val->total_user;
         }
-
         $series = [
             'name' => $users
         ];
-
-       dd($values);
-       
-        
-
+    //    dd($values);
         $categories = json_encode($categories);
         $values = json_encode($values);
         $series = json_encode($series);
-
-        
-
         return view('chart.usertotal', compact('totaluser','categories','values','series'));
     }
 }

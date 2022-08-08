@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-th-large"></i> <span>Dashboard Customer</span></a>
             </li>
 
-            <li class="menu-header">Master Data</li>
+            {{-- <li class="menu-header">Master Data</li>
             <li class="{{ request()->is('asset/products*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{route('asset.products.index')}}"><i class="fas fa-box"></i> <span>Product</span></a>
             </li>
@@ -63,7 +63,7 @@
             <li class="{{ request()->is('operational/enginexserver*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{route('operational.enginexserver.index')}}"><i class="fas fa-globe"></i> <span>Engine x Server</span></a>
             </li>
-            
+             --}}
             
                     {{-- <li class="dropdown {{ request()->is('asset*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Data Master</span></a>

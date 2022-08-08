@@ -19,15 +19,13 @@ class LogActivityController extends Controller
 
         $categories = [];
         $values = [];
-
+        // dd($activities);
         foreach ($activities as $val){
             $categories [] = date( 'd/m/Y', strtotime($val->date_activity),);
             $values [] = $val->total_active_user;
         }
-
         $categories = json_encode($categories);
         $values = json_encode($values);
-
         return view('chart.user', compact('activities','categories','values'));
     }
 }
